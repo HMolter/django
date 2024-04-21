@@ -1,6 +1,5 @@
 # django
-Django Einstieg für WPII
-Inside the subfolders are examples for HTML, GET, POST and Django approach for a simple calculator.
-Add a database in the corrosponding subfolder prior to start of dev-server with:<br>
+**Django Einstieg für WPII
+In den Unterordnern finden sich Beispiele fuer einen einfachen Taschenrechner. Bevor diese verwendet werden koennen, muss noch eine Datenbank erzeugt werden:<br>
 `python manage.py makemigrations`<br>
 `python manage.py migrate`<br>

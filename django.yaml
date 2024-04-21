@@ -1,3 +1,4 @@
+# Datei fuer den Import in Anaconda Navigator
 name: Django
 channels:
   - defaults

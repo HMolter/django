@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <title>Taschenrechner</title>
+</head>
+<body>
+    <div class="screen">{{ anzeige }}</div>
+    <br>
+        <div class="keypad">
+            <a href="{% url 'taschenrechner' %}?Taste=7&ANS={{ ans }}"><button><div class="key">7</div></button></a>
+            <a href="{% url 'taschenrechner' %}?Taste=8&ANS={{ ans }}"><button><div class="key">8</div></button></a>
+            <a href="{% url 'taschenrechner' %}?Taste=9&ANS={{ ans }}"><button><div class="key">9</div></button></a>
+            <a href="{% url 'taschenrechner' %}?Taste=4&ANS={{ ans }}"><button><div class="key">4</div></button></a>
+            <a href="{% url 'taschenrechner' %}?Taste=5&ANS={{ ans }}"><button><div class="key">5</div></button></a>
+            <a href="{% url 'taschenrechner' %}?Taste=6&ANS={{ ans }}"><button><div class="key">6</div></button></a>
+            <a href="{% url 'taschenrechner' %}?Taste=1&ANS={{ ans }}"><button><div class="key">1</div></button></a>
+            <a href="{% url 'taschenrechner' %}?Taste=2&ANS={{ ans }}"><button><div class="key">2</div></button></a>
+            <a href="{% url 'taschenrechner' %}?Taste=3&ANS={{ ans }}"><button><div class="key">3</div></button></a>
+            <a href="{% url 'taschenrechner' %}?oprtn=delete&ANS={{ ans }}"><button><div class="key">ESC</div></button></a>
+            <a href="{% url 'taschenrechner' %}?oprtn=add&ANS={{ ans }}"><button><div class="key">+</div></button></a>
+            <a href="{% url 'taschenrechner' %}?oprtn=execute&ANS={{ ans }}"><button><div class="key">=</div></button></a>
+        </div>
+        <p>
+            Hier ist der Taschenrechner über eine einzige HTML Seite mit der GET Methode realisiert. Jede Taste gibt mit dem Fragezeichen alle Variablen preis, die an den Server übermittelt werden, wenn der Link aufgerufen wird. Der Link führt jedoch immer zur selben HTML Vorlage.
+        </p>
+        <p> In der views.py Datei gibt es eine einzige Funktion, die mit Hilfe der übermittelten Daten die Vorlage umbaut und schließlich als HTML zurück gibt.</p>
+</body>
+</html>

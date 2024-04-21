@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <title>Addition</title>
+</head>
+<body>
+    <div class="screen">{{ anzeige }}</div>
+    <br>
+        <div class="keypad">
+            {% for i in numkeys %}
+                <a href="{% url 'addition' %}?Taste={{ i }}&ANS={{ ans }}"><button><div class="key">{{ i }}</div></button></a>
+            {% endfor %}
+            <a href="{% url 'taschenrechner' %}?oprtn=delete&ANS=0"><button><div class="key">ESC</div></button></a>
+            <a href="{% url 'addition' %}?ANS={{ ans }}"><button><div class="key">+</div></button></a>
+            <a href="{% url 'taschenrechner' %}?oprtn=execute&ANS={{ ans }}"><button><div class="key">=</div></button></a>
+        </div>
+        <p> Für die Addition wurde jetzt eine neue Seite aufgerufen. In der Vorlage ist es jedoch auch möglich mit IF Bedingungen Teile der Seite zu ändern. Hier muss jeder selbst entscheiden, welche Methode übersichtlicher ist.</p>
+</body>
+</html>

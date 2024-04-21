@@ -1,0 +1,9 @@
+/* Der Bildschirm */
+.screen {
+    background-color: burlywood;
+    text-align: right;
+}
+
+.keypad {
+    text-align: center;
+}

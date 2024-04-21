@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <title>Taschenrechner</title>
+</head>
+<body>
+    <div class="screen">{{ anzeige }}</div>
+    <br>
+    <form action="{% url 'taschenrechner' %}" method="POST" >
+        <div class="keypad">
+            <button name="Taste" value="7"><div class="key">7</div></button>
+            <button name="Taste" value="8"><div class="key">8</div></button>
+            <button name="Taste" value="9"><div class="key">9</div></button>
+            <button name="Taste" value="4"><div class="key">4</div></button>
+            <button name="Taste" value="5"><div class="key">5</div></button>
+            <button name="Taste" value="6"><div class="key">6</div></button>
+            <button name="Taste" value="1"><div class="key">1</div></button>
+            <button name="Taste" value="2"><div class="key">2</div></button>
+            <button name="Taste" value="3"><div class="key">3</div></button>
+            <button name="oprtn" value="delete"><div class="key">ESC</div></button>
+            <button name="oprtn" value="add"><div class="key">+</div></button>
+            <button name="oprtn" value="execute"><div class="key">=</div></button>
+            <input type="hidden" name="ANS" value="{{ ans }}">
+            {% csrf_token %}   
+        </div>
+    </form>
+    <p>
+        Hier ist der Taschenrechner über eine einzige HTML Seite mit der POST Methode realisiert. Die Taste übermittelt vorher in einem Formular erstellte Daten. Hier könnte es z.B. noch Häkchen oder Texteingaben geben. Im Gegensatz zur GET Methode wird hier über eine Signatur (Ihr erinnert euch hoffentlich :-)), das CSRF Token, sichergestellt, dass niemand die Eingabe manipuliert oder abhört. Der Link oben im Formular führt erneut zur selben HTML Vorlage.
+    </p>
+    <p> In der views.py Datei gibt es eine einzige Funktion, die mit Hilfe der übermittelten Daten die Vorlage umbaut und schließlich als HTML zurück gibt.</p>
+</body>
+</body>
+</html>

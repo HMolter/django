@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <title>Taschenrechner</title>
+</head>
+<body>
+    <div class="screen">{{ anzeige }}</div>
+    <br>
+        <div class="keypad">
+            {% for i in numkeys %}
+                <a href="{% url 'taschenrechner' %}?Taste={{ i }}&ANS={{ ans }}"><button><div class="key">{{ i }}</div></button></a>
+            {% endfor %}
+            <a href="{% url 'taschenrechner' %}?oprtn=delete&ANS=0"><button><div class="key">ESC</div></button></a>
+            <a href="{% url 'addition' %}?ANS={{ ans }}"><button><div class="key">+</div></button></a>
+            <a href="{% url 'taschenrechner' %}?oprtn=execute&ANS={{ ans }}"><button><div class="key">=</div></button></a>
+        </div>
+        <p> Hier werden neben Variablen auch Schleifen eingesetzt, um sich wiederholende Elemente einer Seite nicht neu schreiben zu müssen. Darüber hinaus verwenden wir die urls.py um bei der Addition eine andere Seite aufzurufen.</p>
+        <p> In der views.py Datei gibt nun zwei Funktionen, je nachdem, ob addiert wird oder nicht.</p>
+</body>
+</html>

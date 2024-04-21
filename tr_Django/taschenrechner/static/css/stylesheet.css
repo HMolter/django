@@ -1,0 +1,16 @@
+/* Der Bildschirm */
+.screen {
+    background-color: burlywood;
+    text-align: right;
+}
+
+.key {
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1em 1em;
+}
